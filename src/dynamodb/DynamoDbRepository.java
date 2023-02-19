@@ -28,17 +28,17 @@ public class DynamoDbRepositoryg {
     getTable().putItem(dynamoDbModel);
   }
 
-  public DynamoDbModel updateTenant(final DynamoDbModel dynamoDbModel) {
+  public DynamoDbModel update(final DynamoDbModel dynamoDbModel) {
     LOG.info(dynamoDbModel);
     return getTable().updateItem(dynamoDbModel);
   }
 
-  public DynamoDbModel deleteTenant(final String partitionKeyId, final String sortKeyId) {
+  public DynamoDbModel delete(final Stringig partitionKeyId, final String sortKeyId) {
     return getTable()
-        .deleteItem(TenantDynamoDbModel.builder().id(partitionKeyId).domain(sortKeyId).build());
+        .deleteItem(DynamoDbModel.builder().id(partitionKeyId).domain(sortKeyId).build());
   }
 
-  public DynamoDbModel getTenant(final String partitionKeyId, final String sortKeyId) {
+  public DynamoDbModel get(final String partitionKeyId, final String sortKeyId) {
     return getTable().getItem(DynamoDbModel.builder().id(partitionKeyId).domain(sortKeyId).build());
   }
 
@@ -52,8 +52,8 @@ public class DynamoDbRepositoryg {
                 .build());
   }
 
-  private DynamoDbTable<TenantDynamoDbModel> getTable() {
+  private DynamoDbTable<DynamoDbModel> getTable() {
     return dynamoDbEnhancedAsyncClient.table(
-        TABLE_NAME, TableSchema.fromBean(TenantDynamoDbModel.class));
+        TABLE_NAME, TableSchema.fromBean(DynamoDbModel.class));
   }
 }
