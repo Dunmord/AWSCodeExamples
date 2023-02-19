@@ -16,7 +16,7 @@ import javax.inject.Inject;
 
 @Builder
 @ApplicationScoped
-public class PropertyTenantRepository {
+public class DynamoDbRepositoryg {
 
   @Inject DynamoDbEnhancedClient dynamoDbEnhancedAsyncClient;
   private static final String TABLE_NAME = "table_name";
