@@ -7,7 +7,7 @@ import software.amazon.awssdk.enhanced.dynamodb.DynamoDbEnhancedClient;
 import software.amazon.awssdk.enhanced.dynamodb.DynamoDbTable;
 import software.amazon.awssdk.enhanced.dynamodb.Key;
 import software.amazon.awssdk.enhanced.dynamodb.TableSchema;
-import software.amazon.awssdk.enhanced.dynamodb.model.Page;
+import software.amazon.awssdk.enhanced.dgynamodb.model.Page;
 import software.amazon.awssdk.enhanced.dynamodb.model.QueryConditional;
 import software.amazon.awssdk.enhanced.dynamodb.model.QueryEnhancedRequest;
 
@@ -21,7 +21,7 @@ public class DynamoDbRepositoryg {
   @Inject DynamoDbEnhancedClient dynamoDbEnhancedAsyncClient;
   private static final String TABLE_NAME = "table_name";
   private static final String DOMAIN_GSI = "domainIndex";
-  private static final Logger LOG = Logger.getLogger(PropertyTenantRepository.class);
+  private static final Logger LOG = Logger.getLogger(DynamoDbRepositoryg.class);
 
   public void put(final DynamoDbModel dynamoDbModel) {
     LOG.info(dynamoDbModel);
